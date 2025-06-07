@@ -19,7 +19,7 @@ public class DoorBreak : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!fired)
+        if (!fired && other.CompareTag("Interactable"))
         {
             this.transform.GetChild(0).gameObject.SetActive(false);
             this.transform.GetChild(1).gameObject.GetComponent<ParticleSystem>().Play();
